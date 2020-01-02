@@ -27,6 +27,7 @@ class Dropmenu extends Component {
         <Dropdown
           pointing="top right"
           icon={null}
+          
           trigger={
             <span>
               <Image avatar src={data.img} />

@@ -1,13 +1,12 @@
-import { Form,Message } from "semantic-ui-react";
+import { Form, Message } from "semantic-ui-react";
 import React, { Component } from "react";
-import Axios from 'axios'
+import Axios from "axios";
 export default class registerForm extends Component {
-
   state = {
-    name:'',
+    name: "",
     email: "",
     password: "",
-    errMessage:''
+    errMessage: ""
   };
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value });
@@ -19,25 +18,25 @@ export default class registerForm extends Component {
     const email = this.state.email;
     const password = this.state.password;
 
-    Axios.post("https://dumb-tick-api.herokuapp.com/api/login", { name,email,password }).then(
-      res => {
-        if(res.data.token){
-
-          console.log(res);
-          localStorage.setItem('token',res.data.token);
-          localStorage.setItem('image',res.data.img)
-          localStorage.setItem('name',res.data.name)
-          window.location.reload(true)
-        }else{
-          this.setState({errMessage: res.data.message})
-        }
+    Axios.post("https://dumb-tick-api.herokuapp.com/api/register", {
+      name,
+      email,
+      password
+    }).then(res => {
+      if (res.data.token) {
+        console.log(res);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("image", res.data.img);
+        localStorage.setItem("name", res.data.name);
+        window.location.reload(true);
+      } else {
+        this.setState({ errMessage: res.data.message });
       }
-    );
+    });
   };
 
   render() {
-
-    const {name,email,password,errMessage} = this.state
+    const { name, email, password, errMessage } = this.state;
     return (
       <Form size="large" onSubmit={this.handleSubmit}>
         <Form.Input
@@ -60,10 +59,7 @@ export default class registerForm extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        {errMessage&&<Message
-          error
-          content={this.state.errMessage}
-        />}
+        {errMessage && <Message error content={this.state.errMessage} />}
         <Form.Button secondary type="Registration" content="Sign Up" />
       </Form>
     );

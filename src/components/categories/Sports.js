@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import Axios from "axios";
 import ItemProps from "../items/itemProps";
 import { Container, Card } from "semantic-ui-react";
+import {
+  getIdCategories
+} from "../../_actions/categories";
+import { connect } from "react-redux";
 
-export default class SportsPage extends Component {
+class Sports extends Component {
   constructor() {
     super();
 
@@ -16,24 +19,15 @@ export default class SportsPage extends Component {
 
   componentDidMount() {
     const id = this.url;
-    Axios.get(`http://localhost:5000/api/category/${id}`)
-      .then(res => {
-        this.setState({ category: res.data });
-      })
-      .catch(err => console.log(err));
+    this.props.dispatch(getIdCategories(id));
   }
 
   render() {
-    const cat = this.state.category;
-    return (
-      <Container>
-        <Card.Group
+    const cat = this.props.categories.data;
 
-          columns={3}
-          centered
-          style={{ paddingTop: "3em", paddingBottom: "5em" }}
-        >
-          {console.log(cat)}
+    return (
+      <Container style={{ paddingTop: "3em", paddingBottom: "5em" }}>
+        <Card.Group centered itemsPerRow={4} stackable>
           {cat.event &&
             cat.event.length > 0 &&
             cat.event.map(data => (
@@ -46,7 +40,6 @@ export default class SportsPage extends Component {
                 description={data.desc}
                 price={data.price}
                 date={data.start}
-                color={data.color}
               />
             ))}
         </Card.Group>
@@ -54,3 +47,11 @@ export default class SportsPage extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    categories: state.categoryDetails
+  };
+};
+
+export default connect(mapStateToProps)(Sports);
