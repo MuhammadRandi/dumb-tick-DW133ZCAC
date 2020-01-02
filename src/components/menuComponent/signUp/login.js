@@ -58,7 +58,7 @@ class LoginModal extends Component {
 }
 
 const ModalRegister = () => (
-  <Modal trigger={<Button style={{background:'none'}}>Sign Up</Button>} dimmer="inverted">
+  <Modal trigger={<Button>Sign Up</Button>} dimmer="inverted">
     <Grid columns={3} stackable size="large" verticalAlign="top" centered>
       <Grid.Row>
         <Grid.Column width={5}>
