@@ -16,7 +16,7 @@ export default class LoginForm extends Component {
     const email = this.state.email;
     const password = this.state.password;
 
-    Axios.post("http://localhost:5000/api/login", { email, password })
+    Axios.post("https://dumb-tick-api.herokuapp.com/api/login", { email, password })
       .then(res => {
         if (res.data.token) {
           console.log(res);

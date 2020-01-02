@@ -8,7 +8,7 @@ export const getEvents = () => {
       type: GET_EVENTS,
       payload: Axios({
         method: "GET",
-        url: "http://localhost:5000/api/events"
+        url: "https://dumb-tick-api.herokuapp.com/api/events"
       })
     }
 }
@@ -18,7 +18,7 @@ export const getIdEvent = (id) => {
       type: GET_ID_EVENT,
       payload: Axios({
         method: 'GET',
-        url: `http://localhost:5000/api/event/${id}`
+        url: `https://dumb-tick-api.herokuapp.com/api/event/${id}`
       })
     }
   }

@@ -8,7 +8,7 @@ export const getCategories = () => {
     type: GET_CATEGORIES,
     payload: Axios({
       method: "GET",
-      url: "http://localhost:5000/api/categories"
+      url: "https://dumb-tick-api.herokuapp.com/api/categories"
     })
   };
 };
@@ -18,7 +18,7 @@ export const getIdCategories = (id) => {
     type: GET_ID_CATEGORIES,
     payload: Axios({
       method: 'GET',
-      url: `http://localhost:5000/api/category/${id}`
+      url: `https://dumb-tick-api.herokuapp.com/api/category/${id}`
     })
   }
 }

@@ -8,7 +8,8 @@ export const getUser = () => {
       type: GET_USERS,
       payload: Axios({
         method: "GET",
-        url: `http://localhost:5000/api/user/${localStorage.getItem('id')}`
+        url: `https://dumb-tick-api.herokuapp.com/api/user/${localStorage.getItem('id')}`
       })
     }
 }
+

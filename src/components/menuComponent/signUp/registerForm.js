@@ -19,7 +19,7 @@ export default class registerForm extends Component {
     const email = this.state.email;
     const password = this.state.password;
 
-    Axios.post("http://localhost:5000/api/register", { name,email,password }).then(
+    Axios.post("https://dumb-tick-api.herokuapp.com/api/login", { name,email,password }).then(
       res => {
         if(res.data.token){
 
