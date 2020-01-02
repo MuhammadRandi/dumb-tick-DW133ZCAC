@@ -20,6 +20,7 @@ export default class EventCard extends Component {
         <Image src={this.props.image} wrapped ui={false} />
         <Card.Content>
           <Card.Header>{this.props.title}</Card.Header>
+          RP. {this.props.price}
         </Card.Content>
         <Card.Content>
           <Grid stackable columns={3}>
@@ -69,7 +70,7 @@ export default class EventCard extends Component {
               </Feed>
             </Grid.Column>
             <Header color="green">
-              RP. {this.props.price}
+             
             </Header>
             {
               this.props.price && <OrderCounter price = {this.props.price} />}

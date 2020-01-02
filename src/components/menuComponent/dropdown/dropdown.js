@@ -27,9 +27,9 @@ class Dropmenu extends Component {
             <span style={{ color: "white" }}>
               {data.img != null ? (
                 <Avatar
+                  name={data.name}
                   round={true}
                   size="2em"
-                  name={data.name}
                   style={{ marginRight: "1em" }}
                 />
               ) : (

@@ -10,7 +10,7 @@ export default class Footer extends Component {
         textAlign="center"
         verticalAlign="bottom"
       >
-        <Grid.Column>item 1</Grid.Column>
+        <Grid.Column>item1</Grid.Column>
         <Grid.Column>item2</Grid.Column>
         <Grid.Column>item3</Grid.Column>
       </Grid>

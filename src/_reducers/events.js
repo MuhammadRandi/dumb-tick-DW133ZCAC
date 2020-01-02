@@ -1,4 +1,4 @@
-import { GET_EVENTS, GET_ID_EVENT } from "../config/constant";
+import { GET_EVENTS} from "../config/constant";
 
 const initialStates = {
   data: [],

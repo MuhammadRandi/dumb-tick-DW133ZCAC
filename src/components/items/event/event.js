@@ -10,8 +10,6 @@ import {
 import EventCard from "./eventCard";
 import { getIdEvent } from "../../../_actions/events";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import OrderCounter from "./orderCounter";
 
 class EventPage extends Component {
   query = new URLSearchParams(window.location.search);

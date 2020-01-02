@@ -1,4 +1,4 @@
-import { GET_CATEGORIES, GET_ID_CATEGORIES } from "../config/constant";
+import { GET_CATEGORIES } from "../config/constant";
 
 const initialStates = {
   data: [],

@@ -1,14 +1,14 @@
 import Axios from "axios";
 
 
-import { GET_USERS  } from "../config/constant";
+import { GET_ORDER  } from "../config/constant";
 
-export const postOrder = () => {
+export const getOrder = () => {
     return{
-      type: GET_USERS,
+      type: GET_ORDER,
       payload: Axios({
         method: "GET",
-        url: `https://dumb-tick-api.herokuapp.com/api/user/${localStorage.getItem('id')}`
+        url: `https://dumb-tick-api.herokuapp.com/api/order`
       })
     }
 }
