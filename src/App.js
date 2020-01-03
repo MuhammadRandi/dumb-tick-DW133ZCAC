@@ -10,6 +10,7 @@ import Profile from "./components/categories/Profile"
 import Footer from"./components/home/footer"
 import EventPage from "./components/items/event/event";
 import MyTickets from "./components/categories/MyTickets";
+import AddEvent from "./components/items/event/addEvent";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Route path="/profile" component={Profile}/>
         <Route path="/event" component={EventPage}/>
         <Route path='/ticket' component={MyTickets}/>
-        <Footer />
+        <Route path='/addevent' component={AddEvent}/>
+        {/* <Footer /> */}
       </div>
     </Router>
   );

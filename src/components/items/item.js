@@ -16,7 +16,7 @@ class ItemCard extends Component {
    
     return (
       <div style={{ paddingTop: "3em", paddingBottom: "5em" }}>
-        <Card.Group itemsPerRow={5} stackable>
+        <Card.Group itemsPerRow={5} stackable centered>
           {Data.map(data => (
               <ItemProps
               style={{ paddingTop: "1em", paddingBottom: "1em" }}

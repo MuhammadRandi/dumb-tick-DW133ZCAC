@@ -26,7 +26,7 @@ export default class registerForm extends Component {
       if (res.data.token) {
         console.log(res);
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("id", res.data.id)
+        localStorage.setItem("id", res.data.id);
         window.location.reload(true);
       } else {
         this.setState({ errMessage: res.data.message });

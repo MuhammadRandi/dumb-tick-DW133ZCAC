@@ -21,15 +21,11 @@ export default class MenuNav extends Component {
         <Container>
           <Menu.Item header as={Link} to={"/"}>
             <Image src="dumbtick.png" />
-            Dumbtick
           </Menu.Item>
-          
           <Menu.Menu position="right">
             <Menu.Item>
               <SearchBar />
             </Menu.Item>
-          </Menu.Menu>
-          <Menu.Menu position="right">
             <Menu.Item>
               {!isToken && <Login />}
               {isToken && <Dropmenu />}
