@@ -9,6 +9,7 @@ import SportsPage from "./components/categories/Sports";
 import Profile from "./components/categories/Profile"
 import Footer from"./components/home/footer"
 import EventPage from "./components/items/event/event";
+import MyTickets from "./components/categories/MyTickets";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/sport" component={SportsPage}/>
         <Route path="/profile" component={Profile}/>
         <Route path="/event" component={EventPage}/>
+        <Route path='/ticket' component={MyTickets}/>
         <Footer />
       </div>
     </Router>

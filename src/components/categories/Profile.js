@@ -25,7 +25,7 @@ class Profile extends Component {
 
   render() {
     const User = this.props.user;
-    const Data = this.props.wishlist;
+    const Data = this.props.wishlist.data;
     console.log(Data);
     return (
       <Container>
@@ -34,9 +34,6 @@ class Profile extends Component {
             <Grid.Column>
               <Header color="red" as="h1">
                 Profile
-                <Button color="red" floated="right">
-                  Edit Profile
-                </Button>
               </Header>
               <Header color="grey" as="h1">
                 {User.name}
@@ -47,10 +44,14 @@ class Profile extends Component {
               <Header size="medium" color="grey">
                 {User.email}
               </Header>
+              <Button color="red" floated="left">
+                Edit Profile
+              </Button>
             </Grid.Column>
             <Grid.Column floated="right">
               <Image circular size="medium" src={User.img} />
             </Grid.Column>
+         
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
@@ -59,20 +60,19 @@ class Profile extends Component {
               </Header>
 
               <Card.Group itemsPerRow={5} stackable>
-               
-                {Data.data&&
-                Data.data.map(data => (
-                  <ItemProps
-                  style={{ paddingTop: "1em", paddingBottom: "1em" }}
-                  key={data.event.id}
-                  id={data.event.id}
-                  image={data.event.img}
-                  title={data.event.title}
-                  description={data.event.desc}
-                  price={data.event.price}
-                  date={data.event.start}
-                  />
-                ))}
+                {Data &&
+                  Data.map(data => (
+                    <ItemProps
+                      style={{ paddingTop: "1em", paddingBottom: "1em" }}
+                      key={data.id}
+                      id={data.event.id}
+                      image={data.event.img}
+                      title={data.event.title}
+                      description={data.event.desc}
+                      price={data.event.price}
+                      date={data.event.start}
+                    />
+                  ))}
               </Card.Group>
             </Grid.Column>
           </Grid.Row>
