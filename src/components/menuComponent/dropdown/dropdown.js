@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Avatar from "react-avatar";
-import { Dropdown, Image, Header } from "semantic-ui-react";
+import { Dropdown, Image, Header, Divider } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { getUser } from "../../../_actions/users";
 import { connect } from "react-redux";
@@ -25,7 +25,7 @@ class Dropmenu extends Component {
           icon={null}
           trigger={
             <span style={{ color: "white" }}>
-              {data.img != null ? (
+              {data.img == null ? (
                 <Avatar
                   name={data.name}
                   round={true}
@@ -35,7 +35,6 @@ class Dropmenu extends Component {
               ) : (
                 <Image avatar src={data.img} />
               )}
-
               {data.name}
             </span>
           }
@@ -45,8 +44,27 @@ class Dropmenu extends Component {
               icon="user"
               text="Profile"
               as={Link}
-              to={`/profile/${data.id}`}
+              to={`/profile/?id=${data.id}`}
             />
+              <Dropdown.Item
+              icon="ticket"
+              text="My Ticket"
+              as={Link}
+              to={`/ticket/?id=${data.id}`}
+            />
+                <Dropdown.Item
+              icon="money bill alternate outline"
+              text="Payment"
+              as={Link}
+              to={`/payment/?id=${data.id}`}
+            />
+                <Dropdown.Item
+              icon="calendar alternate outline"
+              text="Add Event"
+              as={Link}
+              to={`/addevent/?id=${data.id}`}
+            />
+            <Divider/>
             <Dropdown.Item
               icon="sign out"
               text="Sign Out"

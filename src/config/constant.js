@@ -11,3 +11,6 @@ export const GET_USERS = 'GET_USERS'
 
 export const POST_ORDER = ' POST_ORDER'
 export const GET_ORDER = 'GET_ORDER'
+
+
+export const GET_WISHLIST = "GET_WISHLIST"

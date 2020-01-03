@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Container } from "semantic-ui-react";
+import { Menu, Container, Icon } from "semantic-ui-react";
 import Login from "./signUp/login";
 import Dropmenu from "./dropdown/dropdown";
 import { Link } from "react-router-dom";
@@ -10,15 +10,27 @@ export default class MenuNav extends Component {
     const isToken = localStorage.getItem("token");
 
     return (
-      <Menu size="small" stackable secondary inverted style={{backgroundColor: '#FF5555'}}>
+      <Menu
+        size="small"
+        stackable
+        secondary
+        inverted
+        fluid
+        style={{ backgroundColor: "#FF5555" }}
+      >
         <Container>
-          <Menu.Item as={Link} to={"/"}>
-            <h4>Dumbtick</h4>
+          <Menu.Item>
+            <Icon fitted size="big" name="ticket"></Icon>
+          </Menu.Item>
+          <Menu.Item header as={Link} to={"/"}>
+            Dumbtick
           </Menu.Item>
           <Menu.Menu position="right">
-          <Menu.Item>
-            <SearchBar />
-          </Menu.Item>
+            <Menu.Item>
+              <SearchBar />
+            </Menu.Item>
+          </Menu.Menu>
+          <Menu.Menu position="right">
             <Menu.Item>
               {!isToken && <Login />}
               {isToken && <Dropmenu />}

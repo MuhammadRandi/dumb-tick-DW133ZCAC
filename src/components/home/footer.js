@@ -6,7 +6,7 @@ export default class Footer extends Component {
     return (
       <Grid
         columns={3}
-        style={{ backgroundColor: "grey", maxHeight: "50vh" }}
+        style={{ backgroundColor: "grey", maxHeight: "300vh", marginTop:'10vh' }}
         textAlign="center"
         verticalAlign="bottom"
       >

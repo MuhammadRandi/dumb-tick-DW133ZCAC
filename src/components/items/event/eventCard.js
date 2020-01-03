@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
-import {
-  Feed,
-  Card,
-  Image,
-  Grid,
-  Header,
-  
-} from "semantic-ui-react";
+import { Feed, Card, Image, Grid, Header } from "semantic-ui-react";
 import OrderCounter from "./orderCounter";
 
 export default class EventCard extends Component {
@@ -19,9 +12,14 @@ export default class EventCard extends Component {
       <Card color={this.props.color} fluid>
         <Image src={this.props.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>{this.props.title}</Card.Header>
-          RP. {this.props.price}
+          <Card.Header>
+            <Grid.Column floated="left">{this.props.title}</Grid.Column>
+            <Grid.Column floated="right">RP. {this.props.price}</Grid.Column>
+          </Card.Header>
         </Card.Content>
+        
+          {this.props.price && <OrderCounter price={this.props.price} />}
+    
         <Card.Content>
           <Grid stackable columns={3}>
             <Grid.Column>
@@ -69,11 +67,7 @@ export default class EventCard extends Component {
                 </Feed.Event>
               </Feed>
             </Grid.Column>
-            <Header color="green">
-             
-            </Header>
-            {
-              this.props.price && <OrderCounter price = {this.props.price} />}
+            <Header color="green"></Header>
           </Grid>
         </Card.Content>
       </Card>

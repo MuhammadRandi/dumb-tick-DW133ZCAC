@@ -74,6 +74,8 @@ class EventPage extends Component {
                 Share event
               </Header>
                 <Grid.Row>
+                  <Button.Group>
+
                   <Button color='twitter'>
                     <Icon name='twitter'/>
                     twitter
@@ -86,6 +88,7 @@ class EventPage extends Component {
                     <Icon name='linkify'/>
                     copy link
                   </Button>
+                  </Button.Group>
                 </Grid.Row>
             </Grid.Column>
           </Grid.Row>
