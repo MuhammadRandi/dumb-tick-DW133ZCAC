@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Container, Image } from "semantic-ui-react";
+import { Menu, Container } from "semantic-ui-react";
 import Login from "./signUp/login";
 import Dropmenu from "./dropdown/dropdown";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ export default class MenuNav extends Component {
       >
         <Container>
           <Menu.Item header as={Link} to={"/"}>
-            <Image src="dumbtick.png" />
+            Dumbtick
           </Menu.Item>
           <Menu.Menu position="right">
             <Menu.Item>

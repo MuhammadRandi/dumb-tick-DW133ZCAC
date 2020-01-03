@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {
   Grid,
-  Header,
+
   Button,
   Icon,
   Container,
