@@ -18,7 +18,7 @@ class Payment extends Component {
 
   render() {
     const data = this.props.order;
-    const arrSum = data => data.reduce((a,b) => a + b, 0)
+   console.log(data)
     return (
       <Grid>
         <Grid.Row centered>
