@@ -59,7 +59,7 @@ export default class AddEvent extends Component {
           console.log(res)
           if (res.data) {
             alert("Event successfully added");
-            window.location.href = `/`;
+            window.location.href = `/event/?id=${res.data.data.id}`;
           } else {
             this.setState({ errMessage: res.data.message });
           }
