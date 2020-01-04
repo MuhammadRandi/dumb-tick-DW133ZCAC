@@ -11,6 +11,7 @@ import Footer from"./components/home/footer"
 import EventPage from "./components/items/event/event";
 import MyTickets from "./components/categories/MyTickets";
 import AddEvent from "./components/items/event/addEvent";
+import Payment from "./components/categories/Payment";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/event" component={EventPage}/>
         <Route path='/ticket' component={MyTickets}/>
         <Route path='/addevent' component={AddEvent}/>
+        <Route path='/payment' component={Payment}/>
         {/* <Footer /> */}
       </div>
     </Router>

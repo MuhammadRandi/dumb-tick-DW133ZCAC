@@ -3,12 +3,12 @@ import Axios from "axios";
 
 import { GET_ORDER  } from "../config/constant";
 
-export const getOrder = () => {
+export const getOrder = (id) => {
     return{
       type: GET_ORDER,
       payload: Axios({
         method: "GET",
-        url: `https://dumb-tick-api.herokuapp.com/api/order`
+        url: `http://localhost:5000/api/order/${id}/user`
       })
     }
 }

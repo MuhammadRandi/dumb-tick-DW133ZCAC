@@ -1,24 +1,32 @@
 import React, { Component } from "react";
-import { Grid, Segment, Card, Header } from "semantic-ui-react";
+import {
+  Grid,
+  Segment,
+  Card,
+  Header,
+  Dimmer,
+  Divider
+} from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getOrder } from "../../_actions/order";
 import Tickets from "./Tickets";
 
-class MyTickets extends Component {
+class Payment extends Component {
   componentDidMount() {
-    this.props.dispatch(getOrder(localStorage.getItem('id')));
+    this.props.dispatch(getOrder(localStorage.getItem("id")));
   }
 
   render() {
     const data = this.props.order;
+    const arrSum = data => data.reduce((a,b) => a + b, 0)
     return (
-      <Grid centered>
-        <Grid.Row>
+      <Grid>
+        <Grid.Row centered>
           <Header as="h1" color="red" textAlign="left">
-            My Tickets
+            Payment
           </Header>
         </Grid.Row>
-        <Grid.Row>
+        <Grid.Row centered>
           <Grid.Column width={10}>
             <Segment color="red">
               <Card.Group>
@@ -31,10 +39,20 @@ class MyTickets extends Component {
                     name={item.user.name}
                     title={item.event.title}
                     start={item.event.start}
-                    confirmed={item.paymentStatus}
+                    confirmed={item.confimedStatus}
                   />
                 ))}
               </Card.Group>
+              <Grid.Row style={{paddingTop:'2vh'}}>
+                <Grid.Column width="10">
+                  <Header floated="left">Shopping Summary</Header>
+                </Grid.Column>
+                <Grid.Column width="10">
+                <Header floated="right">{arrSum}</Header>
+                </Grid.Column>
+              </Grid.Row>
+              <Divider />
+              <Grid.Row></Grid.Row>
             </Segment>
           </Grid.Column>
         </Grid.Row>
@@ -49,4 +67,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(MyTickets);
+export default connect(mapStateToProps)(Payment);

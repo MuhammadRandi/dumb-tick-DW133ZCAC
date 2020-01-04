@@ -8,14 +8,16 @@ import { events} from "../_reducers/events"
 import { eventDetails} from "../_reducers/eventsDetails"
 import {users} from "../_reducers/users"
 import {wishlist} from '../_reducers/wishlist'
-
+import {orders} from '../_reducers/order'
+ 
 const rootReducers = combineReducers({
     categories,
     events,
     eventDetails,
     categoryDetails,
     users,
-    wishlist
+    wishlist,
+    orders
 })
 
 const store = createStore(rootReducers, applyMiddleware(promise,logger))
