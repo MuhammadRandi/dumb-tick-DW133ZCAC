@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Avatar from "react-avatar";
-import { Dropdown, Image, Header, Divider } from "semantic-ui-react";
+import { Dropdown, Image, Header, Divider, Responsive } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { getUser } from "../../../_actions/users";
 import { connect } from "react-redux";
@@ -24,7 +24,7 @@ class Dropmenu extends Component {
           pointing="top right"
           icon={null}
           trigger={
-            <span style={{ color: "white" }}>
+            <Responsive style={{ color: "white" }}>
               {data.img == null ? (
                 <Avatar
                   name={data.name}
@@ -36,7 +36,7 @@ class Dropmenu extends Component {
                 <Image avatar src={data.img} />
               )}
               {data.name}
-            </span>
+            </Responsive>
           }
         >
           <Dropdown.Menu>

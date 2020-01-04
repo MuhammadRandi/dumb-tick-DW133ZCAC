@@ -8,7 +8,7 @@ export const getOrder = (id) => {
       type: GET_ORDER,
       payload: Axios({
         method: "GET",
-        url: `http://localhost:5000/api/order/${id}/user`
+        url: `http://dumb-tick-api.herokuapp.com/api/order/${id}/user`
       })
     }
 }

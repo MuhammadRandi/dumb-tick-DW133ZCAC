@@ -40,19 +40,12 @@ class Payment extends Component {
                     title={item.event.title}
                     start={item.event.start}
                     confirmed={item.confimedStatus}
+                    payed={item.paymentStatus}
+                    total={item.total}
                   />
                 ))}
               </Card.Group>
-              <Grid.Row style={{paddingTop:'2vh'}}>
-                <Grid.Column width="10">
-                  <Header floated="left">Shopping Summary</Header>
-                </Grid.Column>
-                <Grid.Column width="10">
-                <Header floated="right">{arrSum}</Header>
-                </Grid.Column>
-              </Grid.Row>
-              <Divider />
-              <Grid.Row></Grid.Row>
+             
             </Segment>
           </Grid.Column>
         </Grid.Row>
