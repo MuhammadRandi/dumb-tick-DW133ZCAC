@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Container } from "semantic-ui-react";
+import { Menu, Container, Responsive } from "semantic-ui-react";
 import Login from "./signUp/login";
 import Dropmenu from "./dropdown/dropdown";
 import { Link } from "react-router-dom";
@@ -10,14 +10,16 @@ export default class MenuNav extends Component {
     const isToken = localStorage.getItem("token");
 
     return (
+      <Responsive>
+
       <Menu
         size="small"
-        stackable
+      
         secondary
         inverted
         fluid
         style={{ backgroundColor: "#FF5555" }}
-      >
+        >
         <Container>
           <Menu.Item header as={Link} to={"/"}>
             Dumbtick
@@ -33,6 +35,7 @@ export default class MenuNav extends Component {
           </Menu.Menu>
         </Container>
       </Menu>
+        </Responsive>
     );
   }
 }
